@@ -62,8 +62,11 @@ void BrowserApp::OnBeforeCommandLineProcessing(
 	command_line->AppendSwitch("enable-begin-frame-scheduling");
 
 	command_line->AppendSwitch("enable-system-flash");
-}
 
+	command_line->AppendSwitch("enable-media-stream");
+
+	command_line->AppendSwitchWithValue("enable-blink-features", "EnumerateDevices,AudioOutputDevices");
+}
 void BrowserApp::OnContextCreated(CefRefPtr<CefBrowser> browser,
 		CefRefPtr<CefFrame> frame,
 		CefRefPtr<CefV8Context> context)
